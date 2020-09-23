@@ -6,6 +6,13 @@ const timezone = document.getElementById("timezone");
 const isp = document.getElementById("isp");
 
 var map = L.map('map').setView([51.505, -0.09], 13);
+var marker;
+
+var customMarker = L.icon({
+    iconUrl: 'images/icon-location.svg',
+    iconSize: [38, 60],
+    iconAnchor: [19, 60]
+});
 
 function makeRequest(domain='') {
 
@@ -24,7 +31,8 @@ function handleData(data) {
         loc.innerHTML = `${data.location.city}, ${data.location.region}, ${data.location.country}`;
         timezone.innerHTML = data.location.timezone;
         isp.innerHTML = data.isp;   
-        map.setView([data.location.lat, data.location.lng], 15) ;
+        map.setView([data.location.lat, data.location.lng], 15);
+        marker.setLatLng([data.location.lat, data.location.lng]);
     } else {
         [ipText, loc, timezone, isp].forEach(e => e.innerHTML = "No address/domain found.");
     }s
@@ -37,6 +45,9 @@ function initializeMap() {
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+marker = L.marker([0,0], {icon: customMarker}).addTo(map);
+
 }
 
 button.addEventListener("click", (e) => {
