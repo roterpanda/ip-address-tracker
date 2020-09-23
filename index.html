@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="styles.css">
   
   <title>Frontend Mentor | IP Address Tracker</title>
 
@@ -12,16 +15,63 @@
 
 </head>
 <body>
+  
 
-  IP Address Tracker
+<header>
+  <h1>IP Address Tracker</h1>
+  <form>
+    <input type="text" placeholder="Search for any IP address or domain">
+    <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6"/></svg></button>
+  </form>
+  <section id="results">
+    <article>
+      <span class="label">
+        IP address
+      </span>
+      <span class="resultText">
+        123.212.134.134
+      </span>
+    </article>
+    <article>
+      <span class="label">
+        Location
+      </span>
+      <span class="resultText">
+        Somewhere
+      </span>
+    </article>
+    <article>
+      <span class="label">
+        Timezone
+      </span>
+      <span class="resultText">
+        UTC 00:00
+      </span>
+    </article>
+    <article>
+      <span class="label">
+        ISP
+      </span>
+      <span class="resultText">
+        FancyName
+      </span>
+    </article>
+  </section>
+ 
+</header>
+<section id="map">
 
-  Search for any IP address or domain
+</section>
 
-  IP Address
+  
+
+  
+
+<!--   IP Address
   Location
   Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
+    UTC dd offset value dynamically using the API
+  ISP -->
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
